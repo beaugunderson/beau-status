@@ -1,0 +1,21 @@
+{
+  "name": "beau-status",
+  "version": "1.0.0",
+  "description": "an API for myself",
+  "main": "beau-status.js",
+  "scripts": {
+    "start": "supervisor ./beau-status.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "async": "^2.0.0",
+    "cache-manager": "^2.1.2",
+    "cache-manager-fs": "^1.0.5",
+    "express": "^4.14.0",
+    "googleapis": "^12.0.0",
+    "lodash": "^4.13.1",
+    "request": "^2.73.0",
+    "supervisor": "^0.11.0"
+  }
+}
