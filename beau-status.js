@@ -27,6 +27,16 @@ app.get('/github/', function (req, res) {
   });
 });
 
+app.get('/github/unprocessed/', function (req, res) {
+  github.repos(function (err, repos) {
+    if (err) {
+      return res.json({error: err});
+    }
+
+    res.json(repos);
+  });
+});
+
 email.init(function () {
   app.listen(process.env.PORT);
 });

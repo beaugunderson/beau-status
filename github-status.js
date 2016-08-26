@@ -34,7 +34,6 @@ var diskCache = cacheManager.caching({
 var GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 
 var API_URL = 'https://api.github.com';
-
 var REPO_URL = `${API_URL}/user/repos`;
 
 function commitsUrl(repo) {
@@ -83,7 +82,7 @@ var repoCommits = exports.repoCommits = (repo, cb) => {
   });
 };
 
-function repos(cb) {
+var repos = exports.repos = function (cb) {
   diskCache.wrap('repos', function (cacheCb) {
     var count;
     var page = 1;
@@ -122,7 +121,7 @@ function repos(cb) {
         cacheCb(err, repositories);
       });
   }, {ttl: 60 * 60 * 24}, cb);
-}
+};
 
 function processRepositories(data) {
   return _.chain(data)
