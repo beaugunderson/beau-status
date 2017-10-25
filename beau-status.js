@@ -4,8 +4,19 @@ var email = require('./email-status.js');
 var express = require('express');
 var github = require('./github-status.js');
 var process = require('process');
+var tabs = require('./tab-status.js');
 
 var app = express();
+
+app.get('/tabs/', function (req, res) {
+  tabs(function (err, status) {
+    if (err) {
+      return res.json({error: err});
+    }
+
+    res.json(status);
+  });
+});
 
 app.get('/email/', function (req, res) {
   email.status(function (err, status) {
