@@ -13,6 +13,10 @@ module.exports = function (cb) {
     url: 'http://localhost:5984/beau-tabs/_changes?descending=true&limit=1&include_docs=true',
     json: true
   }, function (err, response, body) {
+    if (!body || !body.results) {
+      return cb(err);
+    }
+
     cb(err, body.results[0].doc);
   });
 };
