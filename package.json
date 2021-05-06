@@ -14,7 +14,7 @@
     "cache-manager-fs": "^1.0.8",
     "express": "^4.17.1",
     "googleapis": "^42.0.0",
-    "lodash": "^4.17.19",
+    "lodash": "^4.17.21",
     "request": "^2.88.0",
     "supervisor": "^0.12.0"
   }
